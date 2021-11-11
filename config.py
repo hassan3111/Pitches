@@ -14,15 +14,14 @@ class Config:
     MAIL_PASSWORD = '0746881243A'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class ProdConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL","")
     if SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
         SQLALCHEMY_DATABASE_URI =SQLALCHEMY_DATABASE_URI.replace("postgres://","postgresql://",1)
 class DevConfig(Config):
     """
-    heroku pg: push <name of the database> DATABASE_URL--app <name of the application>
-
     """
 
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://access:12345@localhost/pitch'
