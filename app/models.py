@@ -30,7 +30,7 @@ class User(UserMixin, db.Model):
     @classmethod
     def get_comments(cls,id):
         reviews = Comment.query.filter_by(pitch_id=id).all()
-        return comments
+        return reviews
 
     @property
     def password(self):
