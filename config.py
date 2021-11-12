@@ -4,7 +4,7 @@ class Config:
     """
     """
 
-    SECRET_KEY = '1131'
+    SECRET_KEY = 'm4ehS5U61CSSBTr_C9xaMQ'
     SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://access:12345@localhost/pitch'
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
     MAIL_SERVER = 'smtp.googlemail.com'
